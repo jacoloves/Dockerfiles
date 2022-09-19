@@ -1,0 +1,13 @@
+#Stage1
+FROM golang:1.16.4-alpine3.13 as builder
+
+COPY ./main.go ./
+
+RUN go build -o /msb ./main.go
+
+#Stage2
+FROM alpine:3.13
+
+COPY --from=builder /msb /usr/local/bin/msb
+
+ENTRYPOINT ["/usr/local/bin/msb"]
