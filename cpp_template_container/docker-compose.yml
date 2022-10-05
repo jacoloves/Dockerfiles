@@ -1,0 +1,10 @@
+version: "3"
+services:
+  cppdev:
+    build: .
+    tty: true
+    volumes:
+      - type: bind
+        source: "./src"
+        target: "/cppdev/src"
+    working_dir: /cppdev/src
