@@ -1,0 +1,10 @@
+version: "3"
+services:
+  haskell:
+    build: ./build
+    tty: true
+    volumes:
+      - type: bind
+        source: "./src"
+        target: "/haskell/src"
+    working_dir: /haskell/src
