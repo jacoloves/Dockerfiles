@@ -1,5 +1,0 @@
-{
-  "name": "Rakcet Dev",
-  "image": "racket/racket",
-  "postCreateCommand": "raco pkg install --auto"
-}
